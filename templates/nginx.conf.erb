@@ -1,0 +1,12 @@
+server {
+    listen <%= port %>;
+
+    server_name <%= hostname %> localhost;
+
+    root <% = lookupvar('aptrepo::params::reporoot') %>;
+
+    location / {
+        try_files $uri $uri/ =404;
+        autoindex on;
+    }
+}
