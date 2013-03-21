@@ -1,15 +1,15 @@
-define aptrepo::repo() {
+define trivialaptrepo::repo() {
     $splitrepos = split($title)
     
     $repo = $splitrepos[0]
     $subrepo = $splitrepos[1]
     
-    Class['aptrepo::config'] -> Aptrepo::Repo["${title}"]
+    Class['trivialaptrepo::config'] -> Trivialaptrepo::Repo["${title}"]
     
-    file {"${aptrepo::params::reporoot}/${repo}/${subrepo}":}
+    file {"${trivialaptrepo::params::reporoot}/${repo}/${subrepo}":}
     
     file {'/etc/incron.d/${title}':
         ensure => 'present',
-        content => template('aptrepo/repowatch.erb')
+        content => template('trivialaptrepo/repowatch.erb')
     }
 }

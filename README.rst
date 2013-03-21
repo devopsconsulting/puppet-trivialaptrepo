@@ -1,5 +1,5 @@
-puppet-aptrepo
-==============
+puppet-trivialaptrepo
+=====================
 
 Set up an extremely simple apt-repo with puppet.
 
@@ -11,11 +11,11 @@ Create a repository server
 
 Standard on server hostname on port 80::
 
-    class {"aptrepo":}
+    class {"trivialaptrepo":}
 
 On a subdomain on a different port::
 
-    class {"aptrepo":
+    class {"trivialaptrepo":
         hostname => 'repo.example.com',
         port => '90'
     }
@@ -26,9 +26,9 @@ Create some repos in the repository server
 
 ::
 
-    Aptrepo::repo{"example/main":}
-    Aptrepo::repo{"example/dev":}
-    Aptrepo::repo{"example/toys":}
+    Trivialaptrepo::repo{"example/main":}
+    Trivialaptrepo::repo{"example/dev":}
+    Trivialaptrepo::repo{"example/toys":}
 
 
 Use the repos with puppet-apt

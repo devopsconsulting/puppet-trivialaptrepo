@@ -1,4 +1,4 @@
-class aptrepo::service {
+class trivialaptrepo::service {
     service {'incron':
         ensure => 'running'
     }

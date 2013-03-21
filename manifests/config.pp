@@ -1,10 +1,10 @@
-class aptrepo::config($hostname, $port) {
-    file {"${aptrepo::params::reporoot}":
+class trivialaptrepo::config($hostname, $port) {
+    file {"${trivialaptrepo::params::reporoot}":
         ensure => 'directory'
     } ->
     file {'/etc/nginx/sites-available/repos':
         ensure => 'present',
-        content => template('aptrepo/nginx.conf.erb')
+        content => template('trivialaptrepo/nginx.conf.erb')
     } ->
     file {'/etc/nginx/sites-enabled/repos':
         ensure => 'link',
@@ -14,6 +14,6 @@ class aptrepo::config($hostname, $port) {
     file {'/usr/local/bin/updaterepo.sh':
         ensure => 'present',
         mode => '0755',
-        content => template('aptrepo/updaterepo.sh.erb')
+        content => template('trivialaptrepo/updaterepo.sh.erb')
     }
 }

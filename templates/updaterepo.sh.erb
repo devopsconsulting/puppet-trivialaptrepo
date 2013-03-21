@@ -1,6 +1,6 @@
 #!/bin/sh
 # Ignore if we were called because of the file we are generating
 [ "$3" = "Packages.gz" ] || [ "$3" = "Packages" ] && exit 0
-cd <%= lookupvar('aptrepo::params::reporoot') %>/$1
+cd <%= lookupvar('trivialaptrepo::params::reporoot') %>/$1
 /usr/bin/dpkg-scanpackages -m $2 /dev/null > $2/Packages
 cat $2/Packages | /bin/gzip -9 > $2/Packages.gz
