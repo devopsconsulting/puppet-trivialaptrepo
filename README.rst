@@ -37,22 +37,22 @@ Use the repos with puppet-apt
 ::
 
     apt::source { "example-main":
-        location          => "http://repo.example.com/",
-        release           => "example/main/",
+        location          => "http://repo.example.com/example/",
+        release           => "main/",
         repos             => "",
         include_src       => false
     }
 
     apt::source { "example-main":
-        location          => "http://repo.example.com/",
-        release           => "example/dev/",
+        location          => "http://repo.example.com/example/",
+        release           => "dev/",
         repos             => "",
         include_src       => false
     }
 
     apt::source { "example-main":
-        location          => "http://repo.example.com/",
-        release           => "example/toys/",
+        location          => "http://repo.example.com/example/",
+        release           => "toys/",
         repos             => "",
         include_src       => false
     }
