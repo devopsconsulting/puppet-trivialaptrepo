@@ -3,7 +3,7 @@ server {
 
     server_name <%= hostname %> localhost;
 
-    root <% = lookupvar('trivialaptrepo::params::reporoot') %>;
+    root <%= lookupvar('trivialaptrepo::params::reporoot') %>;
 
     location / {
         try_files $uri $uri/ =404;
