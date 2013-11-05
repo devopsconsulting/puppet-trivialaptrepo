@@ -26,9 +26,9 @@ Create some repos in the repository server
 
 ::
 
-    Trivialaptrepo::repo{"example/main":}
-    Trivialaptrepo::repo{"example/dev":}
-    Trivialaptrepo::repo{"example/toys":}
+    trivialaptrepo::repo{"example/main":}
+    trivialaptrepo::repo{"example/dev":}
+    trivialaptrepo::repo{"example/toys":}
 
 
 Use the repos with puppet-apt

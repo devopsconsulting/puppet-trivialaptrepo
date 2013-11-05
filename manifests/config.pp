@@ -1,5 +1,4 @@
 class trivialaptrepo::config($hostname, $port) {
-    class {'trivialaptrepo::params':} ->
 
     file {"${trivialaptrepo::params::reporoot}":
         ensure => 'directory'
