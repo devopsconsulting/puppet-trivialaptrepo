@@ -1,7 +1,7 @@
 server {
-    listen <%= port %>;
+    listen <%= @port %>;
 
-    server_name <%= hostname %> localhost;
+    server_name <%= @hostname %> localhost;
 
     root <%= scope.lookupvar('trivialaptrepo::params::reporoot') %>;
 
