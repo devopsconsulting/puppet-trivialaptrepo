@@ -1,5 +1,10 @@
 class trivialaptrepo::install {
-    package {['nginx', 'incron', 'gzip', 'dpkg-dev']:
+    if (!defined(Package['nginx'])) {
+        package {'nginx':
+            ensure => latest
+        }
+    }
+    package {['incron', 'gzip', 'dpkg-dev']:
         ensure => latest
     }
 }

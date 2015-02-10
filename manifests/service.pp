@@ -3,7 +3,9 @@ class trivialaptrepo::service {
         ensure => 'running'
     }
 
-    service {'nginx':
-        ensure => 'running'
+    if (!defined(Service['nginx'])) {
+        service {'nginx':
+            ensure => 'running'
+        }
     }
 }
